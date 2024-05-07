@@ -38,8 +38,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => "Copyright", :text => "Copyright 2014 Rong Cloud" }
   s.author             = { "litao" => "litao@rongcloud.cn" }
   s.social_media_url   = "http://www.rongcloud.cn"
-  s.platform     = :ios, "8.0"
-  s.source       = { :http => "https://downloads.rongcloud.cn/Rong_Cloud_iOS_IM_SDK_v2_8_1_Stable.zip" }
+  s.platform     = :ios, "13.0"
+  s.source       = { :http => "https://downloads.rongcloud.cn/Rong_Cloud_iOS_IM_SDK_v5_8_1_Dev.zip" }
   #s.default_subspec = 'IMLib', 'IMKit'
   s.requires_arc = true
 
@@ -56,70 +56,70 @@ Pod::Spec.new do |s|
 
   s.subspec 'ChatRoom' do |cr|
     cr.vendored_frameworks = "RongCloudIM/RongChatRoom.xcframework"
-    cr.dependency 'RongCloudIM/IMLibCore'
+    cr.dependency 'PRongCloudIM/IMLibCore'
     cr.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
   
   s.subspec 'CustomerService' do |cs|
     cs.vendored_frameworks = "RongCloudIM/RongCustomerService.xcframework"
-    cs.dependency 'RongCloudIM/IMLibCore'
+    cs.dependency 'PRongCloudIM/IMLibCore'
     cs.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
   
   s.subspec 'Discussion' do |discussion|
     discussion.vendored_frameworks = "RongCloudIM/RongDiscussion.xcframework"
-    discussion.dependency 'RongCloudIM/IMLibCore'
+    discussion.dependency 'PRongCloudIM/IMLibCore'
     discussion.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
   
   s.subspec 'PublicService' do |ps|
     ps.vendored_frameworks = "RongCloudIM/RongPublicService.xcframework"
-    ps.dependency 'RongCloudIM/IMLibCore'
+    ps.dependency 'PRongCloudIM/IMLibCore'
     ps.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
   
   s.subspec 'Location' do |rtl|
     rtl.vendored_frameworks = "RongCloudIM/RongLocation.xcframework"
-    rtl.dependency 'RongCloudIM/IMLibCore'
+    rtl.dependency 'PRongCloudIM/IMLibCore'
     rtl.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
 
   s.subspec 'IMLib' do |lib|
     lib.vendored_frameworks = "RongCloudIM/RongIMLib.xcframework"
-    lib.dependency 'RongCloudIM/IMLibCore'
-    lib.dependency 'RongCloudIM/ChatRoom'
-    lib.dependency 'RongCloudIM/Discussion'
-    lib.dependency 'RongCloudIM/PublicService'
-    lib.dependency 'RongCloudIM/CustomerService'
-    lib.dependency 'RongCloudIM/Location'
+    lib.dependency 'PRongCloudIM/IMLibCore'
+    lib.dependency 'PRongCloudIM/ChatRoom'
+    lib.dependency 'PRongCloudIM/Discussion'
+    lib.dependency 'PRongCloudIM/PublicService'
+    lib.dependency 'PRongCloudIM/CustomerService'
+    lib.dependency 'PRongCloudIM/Location'
     lib.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   end
 
   s.subspec 'IMKit' do |kit|
     kit.resources = "RongCloudIM/RongCloud.bundle", "RongCloudIM/en.lproj", "RongCloudIM/zh-Hans.lproj", "RongCloudIM/ar.lproj", "RongCloudIM/Emoji.plist", "RongCloudIM/RCColor.plist"
     kit.vendored_frameworks = "RongCloudIM/RongIMKit.xcframework"
-    kit.dependency 'RongCloudIM/IMLib'
-    # kit.dependency 'RongCloudIM/ChatRoom'
-    # kit.dependency 'RongCloudIM/CustomerService'
-    # kit.dependency 'RongCloudIM/Discussion'
-    # kit.dependency 'RongCloudIM/PublicService'
-    # kit.dependency 'RongCloudIM/Location'
+    kit.dependency 'PRongCloudIM/IMLib'
+    # kit.dependency 'PRongCloudIM/ChatRoom'
+    # kit.dependency 'PRongCloudIM/CustomerService'
+    # kit.dependency 'PRongCloudIM/Discussion'
+    # kit.dependency 'PRongCloudIM/PublicService'
+    # kit.dependency 'PRongCloudIM/Location'
   end
 
   s.subspec 'RongSticker' do |rs|
     rs.resources = "RongCloudIM/RongSticker.bundle", "RongCloudIM/en.lproj", "RongCloudIM/zh-Hans.lproj", "RongCloudIM/ar.lproj"
     rs.vendored_frameworks = "RongCloudIM/RongSticker.xcframework"
-    rs.dependency 'RongCloudIM/IMKit'
+    rs.dependency 'PRongCloudIM/IMKit'
   end
   
   s.subspec 'Sight' do |st|
     st.vendored_frameworks = "RongCloudIM/RongSight.xcframework"
-    st.dependency 'RongCloudIM/IMKit'
+    st.dependency 'PRongCloudIM/IMKit'
   end
 
   s.subspec 'ContactCard' do |ccd|
     ccd.vendored_frameworks = "RongCloudIM/RongContactCard.xcframework"
-    ccd.dependency 'RongCloudIM/IMKit'
+    ccd.dependency 'PRongCloudIM/IMKit'
   end
 
 end
